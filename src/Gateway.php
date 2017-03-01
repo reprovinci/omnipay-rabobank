@@ -19,11 +19,22 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return array(
+            'paymentMethods' => 'IDEAL',
             'merchantId' => '',
             'keyVersion' => '',
             'secretKey' => '',
             'testMode' => false,
         );
+    }
+
+    public function getPaymentMethod()
+    {
+        return $this->getParameter('paymentMethod');
+    }
+
+    public function setPaymentMethod($value)
+    {
+        return $this->setParameter('paymentMethod', $value);
     }
 
     public function getMerchantId()

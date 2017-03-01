@@ -63,6 +63,10 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('customerLanguage', $value);
     }
 
+    public function getPaymentMethod(){
+        return $this->getParameter('paymentMethod');
+    }
+
     public function getData()
     {
         $this->validate('merchantId', 'keyVersion', 'secretKey', 'amount', 'returnUrl', 'currency');
